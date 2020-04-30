@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>ToDo</title>
+</head>
+<body>
+  <div class="app">
+    <div class="app-header d-flex">
+      <h1>Имя</h1>
+      <h2>5 записей, из них понравилось 0</h2>
+    </div>
+    <div class="search-panel d-flex">
+      <input class="form-control search-input" type="text" placeholder="Поиск" />
+      <div class="btn-group">
+        <button type="button" class="btn btn-info">Все</button>
+        <button type="button" class="btn btn-outline-secondary">
+          Понравилось
+        </button>
+        <button type="button" class="btn btn-danger">Сброс</button>
+      </div>
+    </div>
+    <ul class="app-list list-group">
+      <li class="list-group-item">
+        <div class="app-list-item d-flex justify-content-between important like">
+          <span class="app-list-item-label">
+            Learn React
+          </span>
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="button" class="btn-check btn-sm">
+                <i class="fa fa-check"></i>
+              </button>
+              <button type="button" class="btn-trash btn-sm">
+                <i class="fa fa-trash-o"></i>
+              </button>
+              <i class="fa fa-heart"></i>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="app-list-item d-flex justify-content-between">
+          <span class="app-list-item-label">
+            Learn Redax
+          </span>
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="button" class="btn-check btn-sm">
+                <i class="fa fa-check"></i>
+              </button>
+              <button type="button" class="btn-trash btn-sm">
+                <i class="fa fa-trash-o"></i>
+              </button>
+              <i class="fa fa-heart"></i>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="app-list-item d-flex justify-content-between">
+          <span class="app-list-item-label">
+            Learn Hooks
+          </span>
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-center align-items-center">
+              <button type="button" class="btn-check btn-sm">
+                <i class="fa fa-check"></i>
+              </button>
+              <button type="button" class="btn-trash btn-sm">
+                <i class="fa fa-trash-o"></i>
+              </button>
+              <i class="fa fa-heart"></i>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <form class="bottom-panel d-flex">
+      <input type="text" placeholder="Добавить новое событие" class="form-control new-post-label" />
+      <button type="submit" class="btn btn-outline-secondary">
+        Добавить
+      </button>
+    </form>
+  </div>
+</body>
+</html>
