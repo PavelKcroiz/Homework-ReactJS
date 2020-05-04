@@ -5,7 +5,7 @@ const TodoList = (props) => {
     const {todos} = props;
    
     return (
-        <ul>
+        <ul className="app-list list-group">
             {
                 todos.map(title => <TodoListItem key = {title.id} title = {title.title} />)
             }
