@@ -110,10 +110,19 @@ class App extends React.Component {
   };
 
   getWord = (todos) => {
-    const val = todos.length % 10;
-    if (val === 1) return "запись";
-    else if (val === 0 || val > 4) return "записей";
-    else return "записи";
+    const val = todos.length % 100;
+    const val1 = todos.length % 10;
+
+    if (val > 10 && val < 20) {
+      return "записей";
+    }
+    if (val1 > 1 && val1 < 5) {
+      return "записи";
+    }
+    if (val1 === 1) {
+      return "запись";
+    }
+    return "записей";
   };
 
   render() {
