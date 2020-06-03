@@ -72,13 +72,4 @@ const ViewItem = (props) => {
   );
 };
 
-const f = (Comp) => {
-  return class extends Component {
-    componentDidMount() {}
-    render() {
-      return <Comp {...this.props} />;
-    }
-  };
-};
-
-export default f(ItemDetails);
+export default ItemDetails;

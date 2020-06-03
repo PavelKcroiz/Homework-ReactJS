@@ -4,11 +4,16 @@ import Header from "../header";
 import RandomPlanet from "../random-planet";
 import ErrorButton from "../error-button";
 import ErrorComponent from "../error-component";
+import { SwapiProvider } from "../../context";
 import PeoplePage from "../../pages/PeoplePage";
 import PlanetPage from "../../pages/PlanetPage";
 import ShipPage from "../../pages/ShipPage";
 
+import SwapiService from "../../services/swapi-service";
+
 import "./app.css";
+
+const swapiService = new SwapiService();
 
 class App extends React.Component {
   state = {
@@ -36,7 +41,7 @@ class App extends React.Component {
     const planet = this.state.showRandomPlanet ? <RandomPlanet /> : null;
 
     return (
-      <div>
+      <SwapiProvider value={swapiService}>
         <Header />
         {planet}
 
@@ -51,7 +56,7 @@ class App extends React.Component {
         <PeoplePage />
         <PlanetPage />
         <ShipPage />
-      </div>
+      </SwapiProvider>
     );
   }
 }

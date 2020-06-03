@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import ItemList from "../../components/item-list";
-import ItemDetails from "../../components/item-details";
 import SwapiService from "../../services/swapi-service";
-import Record from "../../components/Record";
+import { RenderPlanetList, RenderPlanetDetail } from "../../SwServices";
 
 import "./PlanetPage.css";
 
-class PlanetPage extends Component {
+class PeoplePage extends Component {
   swapiService = new SwapiService();
 
   state = {
@@ -21,31 +19,18 @@ class PlanetPage extends Component {
   }
 
   render() {
-    const { getAllPlanets, getPlanet, getPlanetImage } = this.swapiService;
+    const { selectedItem } = this.state;
     return (
       <div className="row mb2">
         <div className="col-md-6">
-          <ItemList
-            onSelectedItem={this.onSelectedItem}
-            getData={getAllPlanets}
-            renderItem={(item) => `${item.name}`}
-          />
+          <RenderPlanetList onSelectedItem={this.onSelectedItem} />
         </div>
         <div className="col-md-6">
-          <ItemDetails
-            selectedItem={this.state.selectedItem}
-            getPerson={getPlanet}
-            getImage={getPlanetImage}
-            getMessage={`Нужно выбрать планету`}
-          >
-            <Record label={"Populations"} field={"population"} />
-            <Record label={"Rotation Period"} field={"rotationPeriod"} />
-            <Record label={"Diameter"} field={"diameter"} />
-          </ItemDetails>
+          <RenderPlanetDetail itemId={selectedItem} />
         </div>
       </div>
     );
   }
 }
 
-export default PlanetPage;
+export default PeoplePage;
