@@ -2,17 +2,17 @@ import React from "react";
 
 import Header from "../header";
 import RandomPlanet from "../random-planet";
-import ItemList from "../item-list";
-import PersonDetails from "../person-details";
 import ErrorButton from "../error-button";
 import ErrorComponent from "../error-component";
+import PeoplePage from "../../pages/PeoplePage";
+import PlanetPage from "../../pages/PlanetPage";
+import ShipPage from "../../pages/ShipPage";
 
 import "./app.css";
 
 class App extends React.Component {
   state = {
     showRandomPlanet: true,
-    selectedItem: null,
     error: false,
   };
 
@@ -22,10 +22,6 @@ class App extends React.Component {
         showRandomPlanet: !state.showRandomPlanet,
       };
     });
-  };
-
-  onSelectedItem = (id) => {
-    this.setState({ selectedItem: id });
   };
 
   componentDidCatch(error) {
@@ -51,14 +47,10 @@ class App extends React.Component {
           Toggle Random Planet
         </button>
         <ErrorButton />
-        <div className="row mb2">
-          <div className="col-md-6">
-            <ItemList onSelectedItem={this.onSelectedItem} />
-          </div>
-          <div className="col-md-6">
-            <PersonDetails selectedItem={this.state.selectedItem} />
-          </div>
-        </div>
+
+        <PeoplePage />
+        <PlanetPage />
+        <ShipPage />
       </div>
     );
   }

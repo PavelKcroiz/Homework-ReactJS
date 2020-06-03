@@ -1,25 +1,19 @@
 import React, { Component } from "react";
 
-import SwapiService from "../../services/swapi-service";
-
 import "./item-list.css";
 
 class ItemList extends Component {
-  swapiService = new SwapiService();
-
   state = {
     items: [],
   };
 
   componentDidMount() {
-    this.swapiService
-      .getAllPeople()
-      .then((data) => this.setState({ items: data }));
+    this.props.getData().then((data) => this.setState({ items: data }));
   }
 
   render() {
     const { items } = this.state;
-    const { onSelectedItem } = this.props;
+    const { onSelectedItem, renderItem } = this.props;
 
     return (
       <ul className="item-list list-group">
@@ -32,7 +26,7 @@ class ItemList extends Component {
                 onSelectedItem(item.id);
               }}
             >
-              {item.name}
+              {renderItem(item)}
             </li>
           );
         })}
