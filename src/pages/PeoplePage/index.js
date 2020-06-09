@@ -1,3 +1,3 @@
-import PeoplePage from "./PeoplePage";
+import PeoplePage from "./peoplePage";
 
 export default PeoplePage;
