@@ -1,22 +1,26 @@
-const inc = (num) => {
+const booksLoaded = newBooks => {
+	if (newBooks === undefined) {
+		throw new Error("Request failed: for books");
+	} else {
+		return {
+			type: "BOOKS_LOADED",
+			payload: newBooks,
+		};
+	}
+};
+
+const booksAddToCart = id => {
 	return {
-		type: "INC",
-		payload: num,
+		type: "BOOKS_ADD_TO_CART",
+		payload: id,
 	};
 };
 
-const dec = (num) => {
+const booksRemoveToCart = id => {
 	return {
-		type: "DEC",
-		payload: num,
+		type: "BOOKS_REMOVE_TO_CART",
+		payload: id,
 	};
 };
 
-const res = (num) => {
-	return {
-		type: "RES",
-		payload: 0,
-	};
-};
-
-export { inc, dec, res };
+export { booksLoaded, booksAddToCart, booksRemoveToCart };
